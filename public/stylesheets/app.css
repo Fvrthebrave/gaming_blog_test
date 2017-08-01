@@ -1,0 +1,47 @@
+body {
+    padding: 5%;
+    background: skyblue;
+}
+
+.contentPara {
+    margin: 25px 0 25px 0;
+}
+
+.formSize {
+    max-width: 450px;
+}
+
+.rightAlign {
+    text-align: right;
+}
+
+.spacer {
+    margin-bottom: 35px;
+}
+
+.top-spacer {
+    margin-top: 15px;
+}
+
+#menu {
+    margin: 0 auto;
+}
+
+#userDisplay {
+    color: white;
+    margin-right: 10px;
+}
+
+.delete-form {
+    display: inline;
+}
+
+.lightHeader {
+    color: white;
+}
+
+.no-border {
+    border: none;
+    border-style: none;
+}
+

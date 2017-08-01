@@ -1,0 +1,33 @@
+<% include ../partials/header %>
+
+<div class="ui main text container">
+    <div class="ui large centered header">
+        <h2 class="ui black icon tiny header">
+          <i class="circle notched icon"></i>
+          <div class="content">
+            <div class="sub blue header"><h1 class="ui black header">Game Directory</h1></div>
+          </div>
+        </h2>
+            <%games.forEach(function(game){%>
+                <div class="ui divided items segment">
+                    <img class="ui rounded centered image" src="<%=game.image%>">
+                    <a class="ui header huge" href="/games/<%=game._id%>"><%=game.title%></a>
+                    <hr>
+                    <div class="meta">
+                        <h5 class="ui header"><em>Submitted by <%=game.author.username%></em></h5>
+                        <h4><%=game.created.toDateString()%></h4>
+                    </div>
+                    <p class="contentPara"><%=game.body%></p>
+                    <div class="extra">
+                        <a class="ui fluid large button blue" href="/games/<%=game._id%>">Read More <i class="right chevron icon"></i></a>
+                    </div>
+                </div>
+            <% }); %>
+    </div>
+
+</div>
+
+
+<% include ../partials/footer %>
+
+

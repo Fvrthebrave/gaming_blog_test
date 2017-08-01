@@ -1,0 +1,22 @@
+<% include ../partials/header %>
+
+<div class="ui main container">
+    <div class="ui centered header">
+        <div class="ui large centered header">
+                <h1><i class="list icon"></i> Games List</h1>
+        </div>
+            <%games.forEach(function(game){%>
+                <div class="ui centered divided items segment">
+                    <div class="ui header large inline">
+                        <%= game.title %>
+                        <a class="ui header huge blue" href="/games/<%= game._id %>">
+                            <i class="mini angle double right icon"></i>
+                        </a>
+                    </div>
+                </div>
+            <% }); %>
+    </div>
+</div>
+
+
+<% include ../partials/footer %>

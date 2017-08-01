@@ -1,0 +1,15 @@
+<% include ../partials/header.ejs %>
+
+<div class="ui main text container segment">
+    <div class="ui header large">Add New Comment to <%= game.title %></div>
+    <form class="ui form" action="/games/<%= game._id %>/comments" method="POST">
+        <div class="field">
+            <label>Post Comment</label>
+            <textarea type="text" name="comment[text]" placeholder="Enter text here..." required></textarea>
+        </div>
+        <button class="ui button blue large" type="submit">Submit!</button>
+        <a class="ui button red large" href="/games/<%= game._id %>/">Go Back</a>
+    </form>
+</div>
+
+<% include ../partials/footer.ejs %>

@@ -1,0 +1,23 @@
+<% include ../partials/header.ejs %>
+
+<div class="ui main text container segment">
+    <div class="ui header huge">Add New Game</div>
+    <form class="ui form" action="/games" method="POST">
+        <div class="field">
+            <label>Title</label>
+            <input type="text" name="title" placeholder="Game Title" required>
+        </div>
+        <div class="field">
+            <label>Image URL</label>
+            <input type="text" name="image" placeholder="Image Link" required>
+        </div>
+        <div class="field">
+            <label>Content</label>
+            <textarea name="body" placeholder="Post Content" required></textarea>
+        </div>
+        <button class="ui button blue large" type="submit">Submit!</button>
+        <a class="ui button red large" href="/games">Go back</a>
+    </form>
+</div>
+
+<% include ../partials/footer.ejs %>
