@@ -16,7 +16,8 @@ var express         = require("express"),
         gameRoutes    = require("./routes/games"),
         authRoutes    = require("./routes/index");
 
-mongoose.connect("mongodb://localhost/gaming_app");
+// mongoose.connect("mongodb://localhost/gaming_app");
+mongoose.connect("mongodb://Collin.DeSoto:Eclipse99$@ds129043.mlab.com:29043/gamingblog");
 app.set("view engine", "ejs");
 
 app.use(express.static("public"));
