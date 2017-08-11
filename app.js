@@ -17,7 +17,8 @@ var express         = require("express"),
         authRoutes    = require("./routes/index");
 
 mongoose.connect(process.env.DATABASEURL);
-//mongoose.connect("mongodb://collin.desoto:Eclipse99$@ds129043.mlab.com:29043/gamingblog");
+
+
 app.set("view engine", "ejs");
 
 app.use(express.static("public"));
