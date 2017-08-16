@@ -16,8 +16,8 @@ var express         = require("express"),
         gameRoutes    = require("./routes/games"),
         authRoutes    = require("./routes/index");
 
-mongoose.connect(process.env.DATABASEURL);
-
+mongoose.connect(process.env.GAMING_DB);
+console.log(process.env.GAMING_DB);
 
 app.set("view engine", "ejs");
 
