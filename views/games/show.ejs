@@ -1,50 +1,56 @@
 <% include ../partials/header.ejs %>
 
-<div class="ui main text container segment">
-    <img class="ui rounded centered image" src="<%=game.image%>">
-    <h1><%=game.title%></h1>
-    <hr>
-    <div class="meta">
-        <h5 class="ui header"><em>Submitted by <%=game.author.username%></em></h5>
-        <h4><%=game.created.toDateString()%></h4>
-    </div>
-    <p class="contentPara"><%=game.body%></p>
-    <form action="/games/<%=game._id%>?_method=DELETE" method="POST">
-        <% if(currentUser && (game.author.id.equals(currentUser._id) || currentUser.username === "collin.desoto")) { %>
-        <a class="ui button orange large" href="/games/<%=game._id%>/edit">Edit</a>
-        <button class="ui button red large">Delete</button>
-        <% } %>
-    </form>
-    <hr>
-</div>
-<div class="ui main text container segment comments">
-    <div class="ui header centered">
-        <h2 class="ui header"><i class="icon comments outline"></i>Comments</h2>
+<div class="ui main centered text grid">
+    <div class="ui main text segment ten wide column">
+        <img class="ui rounded centered image" src="<%=game.image%>">
+        <h1><%=game.title%></h1>
+        <hr>
+        <div class="meta">
+            <h5 class="ui header"><em>Submitted by <%=game.author.username%></em></h5>
+            <h4><%=game.created.toDateString()%></h4>
+        </div>
+        <p class="contentPara"><%=game.body%></p>
+        <form action="/games/<%=game._id%>?_method=DELETE" method="POST">
+            <% if(currentUser && (game.author.id.equals(currentUser._id) || currentUser.username === "collin.desoto")) { %>
+            <a class="ui button orange large" href="/games/<%=game._id%>/edit">Edit</a>
+            <button class="ui button red large">Delete</button>
+            <% } %>
+        </form>
         <hr>
     </div>
-    <div class="spacer">
-        <a class="ui button violet" href="/games/<%= game._id %>/comments/new"><i class="icon edit"></i>Add New Comment</a>
-    </div>
-    <div class="comments">
-            <% game.comments.forEach(function(comment){ %>
-                    <div class="author">
-                        <strong><%= comment.author.username %></strong> 
-                    </div>
-                    <div class="comment">
-                        <%= comment.text %>
-                    </div>
-                    <div class="actions spacer top-spacer">
-                        <% if(currentUser && (comment.author.id.equals(currentUser._id) || currentUser.username === "collin.desoto")){ %>
-                            <a 
-                                href="/games/<%=game._id%>/comments/<%=comment._id%>/edit" class="ui mini button inverted orange no-border">
-                                    Edit</a>
-                            <form class="delete-form" action="/games/<%=game._id%>/comments/<%=comment._id%>?_method=DELETE" method="POST">
-                                <input type="submit" class="ui mini button inverted red no-border" value="Delete">
-                            </form>
-                        <% } %>
-                    <hr>   
-                    </div>
-            <% }); %>
+</div>
+<br>
+<br>
+<div class="ui main centered text grid">
+    <div class="ui main text segment ten wide column">
+        <div class="ui header centered">
+            <h2 class="ui header"><i class="icon comments outline"></i>Comments</h2>
+            <hr>
+        </div>
+        <div class="spacer">
+            <a class="ui button violet" href="/games/<%= game._id %>/comments/new"><i class="icon edit"></i>Add New Comment</a>
+        </div>
+        <div class="comments">
+                <% game.comments.forEach(function(comment){ %>
+                        <div class="author">
+                            <strong><%= comment.author.username %></strong> 
+                        </div>
+                        <div class="comment">
+                            <%= comment.text %>
+                        </div>
+                        <div class="actions spacer top-spacer">
+                            <% if(currentUser && (comment.author.id.equals(currentUser._id) || currentUser.username === "collin.desoto")){ %>
+                                <a 
+                                    href="/games/<%=game._id%>/comments/<%=comment._id%>/edit" class="ui mini button inverted orange no-border">
+                                        Edit</a>
+                                <form class="delete-form" action="/games/<%=game._id%>/comments/<%=comment._id%>?_method=DELETE" method="POST">
+                                    <input type="submit" class="ui mini button inverted red no-border" value="Delete">
+                                </form>
+                            <% } %>
+                        <hr>   
+                        </div>
+                <% }); %>
+        </div>
     </div>
 </div>
 

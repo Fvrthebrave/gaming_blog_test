@@ -53,9 +53,9 @@ router.post("/login", passport.authenticate("local",
 // LOGOUT ROUTE
 router.get("/logout", function(req, res){
     console.log(req.user.username);
-   req.logout();
-   req.flash("success", "Successfully logged out!");
-   res.redirect("/games");
+    req.logout();
+    req.flash("success", "Successfully logged out!");
+    res.redirect("/games");
 });
 
 module.exports = router;

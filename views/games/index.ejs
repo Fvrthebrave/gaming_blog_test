@@ -1,7 +1,7 @@
 <% include ../partials/header %>
 
-<div class="ui main text container">
-    <div class="ui large centered header">
+<div class="ui main text grid">
+    <div class="ui large centered header ten wide column">
         <h2 class="ui black icon tiny header">
           <i class="circle notched icon"></i>
           <div class="content">
@@ -19,7 +19,7 @@
                     </div>
                     <p class="contentPara"><%=game.body%></p>
                     <div class="extra">
-                        <a class="ui fluid large button blue" href="/games/<%=game._id%>">Read More <i class="right chevron icon"></i></a>
+                        <a class="ui centered large button blue" href="/games/<%=game._id%>">Read More <i class="right chevron icon"></i></a>
                     </div>
                 </div>
             <% }); %>

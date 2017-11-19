@@ -34,7 +34,12 @@ router.post("/games", middleware.isLoggedIn, function(req, res){
     var image = req.body.image;
     var body = req.body.body;
     
+    /* We create newGame variable because we need to ensure that the
+       author is added to the game... since this is not included in the form,
+       we have to create this instance of a model a little differently...
+    */
     var newGame = {title: title, image: image, body: body, author: author};
+    
     Game.create(newGame, function(err, newGame){
        if(err){
            console.log(err);

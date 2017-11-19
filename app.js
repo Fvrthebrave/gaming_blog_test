@@ -12,12 +12,11 @@ var express         = require("express"),
     User            = require("./models/user"),
     seedDB          = require("./seeds.js");
     
-    var commentRoutes = require("./routes/comments"),
-        gameRoutes    = require("./routes/games"),
-        authRoutes    = require("./routes/index");
+var commentRoutes = require("./routes/comments"),
+    gameRoutes    = require("./routes/games"),
+    authRoutes    = require("./routes/index");
 
 mongoose.connect(process.env.GAMING_DB);
-console.log(process.env.GAMING_DB);
 
 app.set("view engine", "ejs");
 
